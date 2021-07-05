@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:views="clr-namespace:NavCustomerMobile.Views" 
+            xmlns:local="clr-namespace:NavCustomerMobile.MarkupExtensions"
+            mc:Ignorable="d"
+            x:Class="NavCustomerMobile.Views.HomeTabbedPage"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            ios:Page.UseSafeArea="False"
+            BackgroundColor="Transparent"
+            BarBackgroundColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource MaxVonLightGray}}"
+            NavigationPage.HasNavigationBar="False">
+    <!--Pages can be added as references or inline-->
+    <views:HomePageDetail
+        x:Name="Dashboard"
+        Title="Home"
+        Icon="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.iconRedDashboard.png}" />
+    <views:BookNow
+        x:Name="bookingPage"
+        Title="Book Now"
+        Icon="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.iconRedCar.png}" />
+    <views:MyProfile
+        x:Name="MembershipScreen"
+        Title="My Profile"
+        Icon="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.iconRedUser.png}" />
+    <!--<views:HelpFunnelPage
+        x:Name="AcountPage"
+        Title="Contact Us"
+        Icon="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.iconRedHelp.png}" />-->
+</TabbedPage>
