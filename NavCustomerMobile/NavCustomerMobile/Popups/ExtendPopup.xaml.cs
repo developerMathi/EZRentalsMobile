@@ -104,13 +104,13 @@ namespace NavCustomerMobile.Popups
             PopupNavigation.Instance.PopAsync();
         }
 
-        private void confirmBtn_Clicked(object sender, EventArgs e)
+        private async void confirmBtn_Clicked(object sender, EventArgs e)
         {
             if (type == ReferenceType.Agreement)
             {
                 if (NumberOfDays.SelectedIndex == -1)
                 {
-                    PopupNavigation.Instance.PushAsync(new Error_popup("Please select the number of days for extend your rental."));
+                    await PopupNavigation.Instance.PushAsync(new Error_popup("Please select the number of days for extend your rental."));
                 }
                 //if (extendedDate.Date.DayOfYear < agreementDetail.CheckinDate.AddHours(24).DayOfYear)
                 //{
@@ -169,7 +169,12 @@ namespace NavCustomerMobile.Popups
                     //        }
                     //    }
                     //}
-                    updateAgreement();
+                    bool isExtendAvailable = await DisplayAlert("Alert", "Are you sure you want to extend ?","Yes","Cancel");
+                    if (isExtendAvailable)
+                    {
+                        updateAgreement();
+                    }
+                    
                 }
             }
 
@@ -247,7 +252,12 @@ namespace NavCustomerMobile.Popups
                     //        updateReservation();
                     //    }
                     //}
-                    updateReservation();
+                    bool isExtendAvailable = await DisplayAlert("Alert", "Are you sure you want to extend ?", "Yes", "Cancel");
+                    if (isExtendAvailable)
+                    {
+                        updateReservation();
+                    }
+                    
                 }
             }
         }

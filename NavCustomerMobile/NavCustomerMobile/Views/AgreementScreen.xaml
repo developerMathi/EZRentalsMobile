@@ -1288,6 +1288,7 @@
                             </Label>
 
                             <Label
+                                FontAttributes="Bold"
                             Grid.Row="19"
                             Grid.Column="0"
                             Margin="15,0,0,0"
@@ -1312,6 +1313,7 @@
                                 </Label.FontSize>
                             </Label>
                             <Label
+                                FontAttributes="Bold"
                             x:Name="BalanceDue"
                             Grid.Row="19"
                             Grid.Column="1"
@@ -1343,7 +1345,7 @@
                             Margin="15,0,0,0"
                             FontFamily="Roboto-Bold"
                             TextColor="{AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack}}">
-                                Balance Deposite
+                                Balance Deposit
                                 <Label.FontSize>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="iOS">

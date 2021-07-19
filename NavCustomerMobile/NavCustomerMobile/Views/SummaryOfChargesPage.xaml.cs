@@ -393,7 +393,7 @@ namespace NavCustomerMobile.Views
                                 {
                                     if (Convert.ToInt32(ReservationMobileResponse.ReserveId) > 0)
                                     {
-                                        DependencyService.Get<INotification>().CreateNotification("Booking completed successfully", "Your reservation " + ReservationMobileResponse.ReservationNumber + " created successfully. Please check the details.", "ViewReservation", ReservationMobileResponse.ReserveId.ToString());
+                                        //DependencyService.Get<INotification>().CreateNotification("Booking completed successfully", "Your reservation " + ReservationMobileResponse.ReservationNumber + " created successfully. Please check the details.", "ViewReservation", ReservationMobileResponse.ReserveId.ToString());
                                         await PopupNavigation.Instance.PushAsync(new SuccessPopUp("Your reservation has been submitted. You will receive an email when your background check has been completed and your insurance has been issued (you will not be able to pick up the vehicle until then.)", 1));
                                     }
                                 }

@@ -60,7 +60,8 @@ namespace NavCustomerMobile.Views
             }
             else
             {
-                TheCarousel.ScrollTo(2);
+                //TheCarousel.ScrollTo(2);
+                Navigation.PushAsync(new LoginPage());
             }
         }
     }

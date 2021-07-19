@@ -27,7 +27,15 @@ namespace NavCustomerMobile
 
             var currentVersion = VersionTracking.CurrentVersion;
 
-            MainPage = new NavigationPage(new Productor ());
+            if (!App.Current.Properties.ContainsKey("IsOnborded"))
+            {
+                App.Current.Properties.Add("IsOnborded", false);
+            }
+
+
+            MainPage = new NavigationPage(new Productor());
+
+
 
 
 

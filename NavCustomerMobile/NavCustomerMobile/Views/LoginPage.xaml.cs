@@ -166,6 +166,7 @@ namespace NavCustomerMobile.Views
                             cutomerAuthContext = loginController.CheckLogin(loginCustomer, token);
                             if (cutomerAuthContext.CustomerId > 0)
                             {
+                                App.Current.Properties["IsOnborded"] = true;
                                 portalDetailsMobileRequest.customerId = cutomerAuthContext.CustomerId;
                                 updateConstantCustomerDetails(portalDetailsMobileRequest);
 

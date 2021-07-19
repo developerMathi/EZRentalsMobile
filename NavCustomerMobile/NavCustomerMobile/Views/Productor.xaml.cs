@@ -161,7 +161,15 @@ namespace NavCustomerMobile.Views
                     if ((int)App.Current.Properties["CustomerId"] == 0)
                     {
 
-                        await Navigation.PushAsync(new IntialLoading());
+                        if ((bool)App.Current.Properties["IsOnborded"])
+                        {
+                            await Navigation.PushAsync(new LoginPage());
+                        }
+                        else
+                        {
+                            await Navigation.PushAsync(new IntialLoading());
+                        }
+                            
                         //MainPage = new NavigationPage(new WelcomPage());
                         //MainPage = new NavigationPage(new enterConfirmationCodePage());
                     }
