@@ -117,18 +117,18 @@ namespace NavCustomerMobile.Views
 
             if (string.IsNullOrEmpty(loginEmailAddress.Text))
             {
-                errorLabel.Text = "Please enter a email address";
-                errorLabel.IsVisible = true;
+                //errorLabel.Text = "Please enter a email address";
+                //errorLabel.IsVisible = true;
             }
             else if (!new EmailAddressAttribute().IsValid(loginEmailAddress.Text))
             {
-                errorLabel.Text = "Email is not in a valid format.Please try again";
-                errorLabel.IsVisible = true;
+                //errorLabel.Text = "Email is not in a valid format.Please try again";
+                //errorLabel.IsVisible = true;
             }
             else if (string.IsNullOrEmpty(loginPassword.Text))
             {
-                errorLabel.Text = "Please enter a valid password";
-                errorLabel.IsVisible = true;
+                //errorLabel.Text = "Please enter a valid password";
+                //errorLabel.IsVisible = true;
             }
             else
             {
@@ -270,7 +270,7 @@ namespace NavCustomerMobile.Views
                         {
                             await PopupNavigation.Instance.PushAsync(new Error_popup("Login failed. Please try again."));
                             loginPassword.Text = null;
-                            errorLabel.IsVisible = false;
+                            //errorLabel.IsVisible = false;
                         }
 
                     }

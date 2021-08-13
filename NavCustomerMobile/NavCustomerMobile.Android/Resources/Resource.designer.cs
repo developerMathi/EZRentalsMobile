@@ -19247,7 +19247,16 @@ namespace NavCustomerMobile.Droid
 		{
 			
 			// aapt resource value: 0x7f090000
-			public const int notification = 2131296256;
+			public const int luxury = 2131296256;
+			
+			// aapt resource value: 0x7f090001
+			public const int miroshnichenko = 2131296257;
+			
+			// aapt resource value: 0x7f090002
+			public const int notification = 2131296258;
+			
+			// aapt resource value: 0x7f090003
+			public const int Yacht = 2131296259;
 			
 			static Raw()
 			{

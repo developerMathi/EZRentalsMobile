@@ -42,9 +42,9 @@ namespace NavCustomerMobile.Views
             base.OnAppearing();
             var list = new List<SlidePageItems>
             {
-               new SlidePageItems(){ id=0,label= "Welcome to our app. ",imageMobile="welcomeSlide.jpg",imageTap="NavCustomerMobile.Assets.EzLogo.png",Skiplabel="Skip"},
-                 new SlidePageItems(){ id=1,label="We are providing luxury rental services. ",imageMobile="carSlide.jpg",imageTap="NavCustomerMobile.Assets.EzLogo.png", Skiplabel="Skip"},
-                   new SlidePageItems(){ id=2,label= "Beautiful yacht and exotic cars are here for your enjoyment. ",imageMobile="yachtSlide.jpg",imageTap="NavCustomerMobile.Assets.EzLogo.png", Skiplabel="Next"}
+               new SlidePageItems(){ id=0,label= "Welcome to our app. ",imageMobile="ms-appx:///miroshnichenko.mp4",imageTap="NavCustomerMobile.Assets.EzLogo.png",Skiplabel="Skip"},
+                 new SlidePageItems(){ id=1,label="We are providing luxury rental services. ",imageMobile="ms-appx:///luxury.mp4",imageTap="NavCustomerMobile.Assets.EzLogo.png", Skiplabel="Skip"},
+                   new SlidePageItems(){ id=2,label= "Beautiful yacht and exotic cars are here for your enjoyment. ",imageMobile="ms-appx:///Yacht.mp4",imageTap="NavCustomerMobile.Assets.EzLogo.png", Skiplabel="Next"}
             };
             TheCarousel.ItemsSource = list;
 

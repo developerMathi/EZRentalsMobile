@@ -18,13 +18,13 @@
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <Grid BackgroundColor="{ AppThemeBinding Dark={StaticResource MaxVonBlack}, Light={StaticResource MaxVonWhite} }">
-                        <Image
+                        <!--<Image
                 Aspect="AspectFill"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                             Source="{Binding imageMobile}"
                             Opacity="0.4">
-                            <!--<Image.Source>
+                            --><!--<Image.Source>
                                 <OnPlatform x:TypeArguments="ImageSource">
                                     <On Platform="iOS">
                                         <OnIdiom
@@ -39,23 +39,31 @@
                                 Tablet="{Binding imageMobile}"/>
                                     </On>
                                 </OnPlatform>
-                            </Image.Source>-->
-                        </Image>
-                        <StackLayout
-                            BackgroundColor="Transparent"
+                            </Image.Source>--><!--
+                        </Image>-->
+
+                        <MediaElement Source="{Binding imageMobile}" Aspect="AspectFill" AutoPlay="True" Volume="0" IsLooping="True" />
+                            <StackLayout
                             AbsoluteLayout.LayoutBounds=
                             "0.5,0.3,AutoSize,AutoSize"
                             AbsoluteLayout.LayoutFlags=
                             "PositionProportional"
                             HorizontalOptions="Center">
-                            <Grid RowDefinitions="Auto,Auto,Auto"   Padding="20"
+                            <StackLayout.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Color="{AppThemeBinding Dark={StaticResource MaxVonBlack},Light={StaticResource MaxVonWhite}}" Offset="0.05"/>
+                                    <GradientStop Color="Transparent" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </StackLayout.Background>
+                            <Grid RowDefinitions="Auto,Auto"   Padding="20,0,20,20"
                                   BackgroundColor="Transparent"
                                   VerticalOptions="StartAndExpand">
                                 <!-- Here add the code that is being explained in this block-->
                                 <!-- Back button-->
                                 <!--<Button Grid.Row="0" Grid.Column="0" ImageSource="ArrowLeft" HorizontalOptions="Start" WidthRequest="50" BackgroundColor="#fee489" CornerRadius="15"/>-->
                                 <!--Skip label-->
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Skiplabel}" HorizontalTextAlignment="End" FontAttributes="Bold" TextColor="{ AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack} }" FontFamily="Roboto-Medium">
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Skiplabel}" HorizontalTextAlignment="End" FontAttributes="Bold" TextColor="{ AppThemeBinding Dark={StaticResource MaxVonYellow}, Light={StaticResource MaxVonYellow} }" FontFamily="Roboto-Medium"
+                                       VerticalOptions="Center">
                                     <Label.FontSize>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">
@@ -80,9 +88,9 @@
                                     </Label.GestureRecognizers>
                                 </Label>
                                 <!--Main imagen with background-->
-                                <Image Grid.Row="1" Grid.Column="0"  Source="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.EzLogo.png}" Aspect="AspectFit" HeightRequest="100" Margin="0,30"/>
+                                <Image Grid.Row="0" Grid.Column="0"  Source="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.EzLogo.png}" Aspect="AspectFit" HeightRequest="50" Margin="0,30" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <!-- Title-->
-                                <Label Grid.Row="2" Grid.Column="0"  HorizontalTextAlignment="Center" FontSize="20" Margin="0,30,0,0"   Text="{Binding label}" TextColor="{ AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack} }"   FontFamily="Roboto-Medium">
+                                <Label Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Center" FontSize="12" Margin="0,30,0,0"   Text="{Binding label}" TextColor="{ AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack} }"   FontFamily="Roboto-Regular" VerticalOptions="Center">
                                     <Label.FontSize>
                                         <OnPlatform x:TypeArguments="x:Double">
                                             <On Platform="iOS">
@@ -94,8 +102,8 @@
                                             <On Platform="Android,Windows">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                        Phone="17"
-                                        Tablet="24" />
+                                        Phone="15"
+                                        Tablet="22" />
                                             </On>
                                         </OnPlatform>
                                     </Label.FontSize>
@@ -118,7 +126,9 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             IndicatorColor="{ AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack} }"
             IndicatorSize="10"
-            SelectedIndicatorColor="{StaticResource MaxVonYellow}" />
+            SelectedIndicatorColor="{StaticResource MaxVonYellow}" >
+           
+        </IndicatorView>
         <!--<Label
             VerticalOptions="Center"
             AbsoluteLayout.LayoutBounds="1,1,100,100"

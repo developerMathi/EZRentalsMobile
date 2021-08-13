@@ -22,6 +22,7 @@ namespace NavCustomerMobile
         public App(string pagename, string data)
         {
             Xamarin.Forms.Application.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
+            Xamarin.Forms.Device.SetFlags(new string[] { "MediaElement_Experimental", "Brush_Experimental" });
 
             InitializeComponent();
 

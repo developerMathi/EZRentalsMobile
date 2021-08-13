@@ -277,4 +277,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\gears.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\miroshnichenko.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Yacht.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\luxury.mp4" />
+  </ItemGroup>
 </Project>

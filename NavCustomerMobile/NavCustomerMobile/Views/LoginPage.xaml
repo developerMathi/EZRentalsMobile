@@ -12,12 +12,22 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid>
+
             <Image
                 Aspect="AspectFill"
-                Source="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.cars.car4.jpg}"
-                VerticalOptions="Fill" 
-                Opacity="0.1"/>
+                Source="{local:EmbeddedImage ResourceId=NavCustomerMobile.Assets.cars.car1.jpg}"
+                VerticalOptions="Fill" >
+
+            </Image>
+            <!--<MediaElement Source="ms-appx:///miroshnichenko.mp4" Aspect="AspectFill" AutoPlay="True" Volume="0" IsLooping="True" />-->
             <ScrollView>
+                <ScrollView.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="{AppThemeBinding Dark={StaticResource MaxVonBlack},Light={StaticResource MaxVonWhite}}" Offset="0.05" />
+                        <GradientStop Color="Transparent" Offset="0.5"/>
+                        <GradientStop Color="{AppThemeBinding Dark={StaticResource MaxVonBlack},Light={StaticResource MaxVonWhite}}" Offset="1.0" />
+                    </LinearGradientBrush>
+                </ScrollView.Background>
                 <StackLayout
                 Margin="20,30,20,20"
                 HorizontalOptions="FillAndExpand"
@@ -99,11 +109,17 @@
                         <Frame
                         Grid.Row="0"
                         Padding="10,0,0,0"
-                        BackgroundColor="Transparent"
                         BorderColor="{AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack}}"
                         CornerRadius="10"
                         HasShadow="False"
-                        VerticalOptions="FillAndExpand">
+                        VerticalOptions="FillAndExpand"
+                            >
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="{AppThemeBinding Dark='0,1',Light='1,1'}">
+                                    <GradientStop Color="{AppThemeBinding Dark={StaticResource MaxVonBlack},Light={StaticResource MaxVonWhite}}" Offset="0.05" />
+                                    <GradientStop Color="Transparent" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
 
 
                             <Grid>
@@ -205,6 +221,12 @@
                         BorderColor="{AppThemeBinding Dark={StaticResource MaxVonWhite}, Light={StaticResource MaxVonBlack}}"
                         CornerRadius="10"
                         HasShadow="False">
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0"  EndPoint="{AppThemeBinding Dark='0,1',Light='1,1'}">
+                                    <GradientStop Color="{AppThemeBinding Dark={StaticResource MaxVonBlack},Light={StaticResource MaxVonWhite}}" Offset="0.05" />
+                                    <GradientStop Color="Transparent" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
                             <Frame.HeightRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                     <On Platform="iOS">
@@ -343,13 +365,14 @@
 
                     </Grid>
                     <Label
-                    x:Name="errorLabel"
+                    x:Name="errorLabelcc"
                     Margin="0,0,0,5"
                     FontFamily="Roboto-Medium"
                     FontSize="Small"
                     TextColor="{StaticResource DanderRed}" />
                     <Button
                     x:Name="LoginButton"
+                        BorderColor="{StaticResource MaxVonRed}"
                     BackgroundColor="{StaticResource MaxVonRed}"
                     BorderWidth="0"
                     Clicked="LoginButton_Clicked"
@@ -360,6 +383,12 @@
                     Text="Login"
                     TextColor="{StaticResource MaxVonWhite}"
                     VerticalOptions="CenterAndExpand">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0"  EndPoint="1,0">
+                                <GradientStop Color="{AppThemeBinding Dark={StaticResource MaxVonRed},Light={StaticResource MaxVonRed}}" Offset="0.1" />
+                                <GradientStop Color="{StaticResource MaxVonBlack}" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
                         <Button.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="iOS">
